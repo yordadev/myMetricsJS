@@ -1,0 +1,24 @@
+{
+  "name": "mymetricsjs",
+  "version": "1.0.0",
+  "description": "Monitor your server with this light weight nodejs package that reports to your API endpoint with your server statatics.",
+  "main": "mymetrics.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yordadev/myMetricsJS.git"
+  },
+  "keywords": [
+    "metrics",
+    "server"
+  ],
+  "author": "yordadev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yordadev/myMetricsJS/issues"
+  },
+  "homepage": "https://github.com/yordadev/myMetricsJS#readme"
+}

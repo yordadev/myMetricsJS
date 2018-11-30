@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo ""
+echo "myMetricsJs: Setting up everything for you, ser."
+echo ""
+echo ""
+echo ""
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt-get install screen
+
+chmod +x ./client/start
+chmod +x ./client/stop
+chmod +x ./client/debug
+cd client
+echo ""
+echo ""
+echo ""
+echo "myMetricsJS: Setup Complete. Please configure your config.json file."
+echo ""

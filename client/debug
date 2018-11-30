@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if screen -list | grep -q "mymetricsjs"; then
+  echo ""
+  echo "myMetricsJs: Process Already Running! Killing it."
+  screen -S yordametrics -p 0 -X quit
+  exit # User Error, The Script is not Running at the moment.
+fi
+
+echo "myMetricsJs: Starting the monitor."
+
+node ./mymetrics.js

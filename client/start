@@ -1,0 +1,12 @@
+
+#!/bin/bash
+
+if screen -list | grep -q "mymetricsjs"; then
+  echo ""
+  echo "myMetricsJs: Process Already Running!"
+  exit # User Error, The Script is not Running at the moment.
+fi
+
+echo "myMetricsJs: Process has been started in the background."
+
+screen -S mymetricsjs -dm node ./mymetrics.js

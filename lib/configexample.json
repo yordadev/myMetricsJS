@@ -1,0 +1,21 @@
+{
+    "setup": {
+        "notifyAddress": "ip/subdomain.domain.com/domain.com",
+        "notifyPort": "443 or 80",
+        "notifyPath": "/api/monitor"
+    },
+    "debug": {
+        "enabled": true
+    },
+    "security": {
+        "type": "custom",
+        "service": {
+            "jwt": {
+                "token": "enter your jwt token"
+            },
+            "custom": {
+                "token": "mymetricsjs"
+            }
+        }
+    }
+}

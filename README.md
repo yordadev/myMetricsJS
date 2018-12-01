@@ -95,6 +95,25 @@ node setup
 ### Usage 
 Useage of this package lives in `./client/` and its easy peasy.
 ```node start && node stop```
-
+### Expected Payload to Server
+```
+    "authorization": {
+        'token': "" 
+    },
+    "id": "",
+    "cpus": 0,
+    "server_uptime": 0,
+    "total_memory": 0,
+    "free_memory": 0,
+    "free_memory_round": 0,
+    "load_avg": [],
+    /* Comes in a List of 3 Elements, 1 Min, 15 Min, 30 Min */
+    "interfaces": {
+        "ipv4": [],
+        "ipv6": []
+    },
+    "errorLog": []
+}
+```
 ### Contribute
 Contribute or buy me a covfefe.

@@ -4,9 +4,6 @@
         "notifyPort": "443 or 80",
         "notifyPath": "/api/monitor"
     },
-    "debug": {
-        "enabled": true
-    },
     "security": {
         "type": "custom",
         "service": {
@@ -17,5 +14,23 @@
                 "token": "mymetricsjs"
             }
         }
+    },
+    "services": {
+        "enabled": "screen",
+        "available": {
+            "screen": {
+                "run": "screen -S mymetricsjs -dm node ./mymetrics.js",
+                "stop": "screen -S mymetricsjs -p 0 -X quit",
+                "install": "sudo apt-get install screen"
+            },
+            "pm2": {
+                "run": "pm2 start mymetrics.js",
+                "stop": "pm2 stop mymetrics.js",
+                "install": "npm install pm2@latest -g"
+            }
+        }
+    },
+    "debug": {
+        "enabled": true
     }
 }

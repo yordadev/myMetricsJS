@@ -23,6 +23,7 @@ Yes, myMetricsJS has prebuilt in authentication ready to go for you.
 - set `security.service.custom.token` to `anything you want`
 - on your API Endpoint, you will retrieve the token entered above to verify that this is coming from indeed your server.
 
+
 ### Screenshots
 <p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518523752833875968/mymetricsscreenshot1.png'/></p>
 
@@ -85,7 +86,7 @@ To use debug mode enabled type the following with debug enabled. This does not r
 ```node mymetricsjs```
 
 
-### Installing & Running on Ubuntu
+### Installing
 ```sh
 git clone https://github.com/yordadev/myMetricsJS.git
 cd client
@@ -95,7 +96,9 @@ node setup
 ### Usage 
 Usage of this package lives in `./client/` and its easy peasy.
 ```node start && node stop```
-### Expected Payload to Server
+
+
+### Expected Payload
 ```
     "authorization": {
         'token': "" 
@@ -115,5 +118,7 @@ Usage of this package lives in `./client/` and its easy peasy.
     "errorLog": []
 }
 ```
+
+
 ### How to contribute
 Contribute a PR/Issue or buy me a covfefe.

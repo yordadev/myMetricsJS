@@ -93,7 +93,7 @@ node setup
 ```
 
 ### Usage 
-Useage of this package lives in `./client/` and its easy peasy.
+Usage of this package lives in `./client/` and its easy peasy.
 ```node start && node stop```
 ### Expected Payload to Server
 ```

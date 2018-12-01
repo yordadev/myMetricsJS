@@ -100,6 +100,7 @@ Usage of this package lives in `./client/` and its easy peasy.
 
 ### Expected Payload
 ```
+{
     "authorization": {
         'token': "" 
     },

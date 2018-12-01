@@ -115,5 +115,5 @@ Usage of this package lives in `./client/` and its easy peasy.
     "errorLog": []
 }
 ```
-### Contribute
-Contribute or buy me a covfefe.
+### How to contribute
+Contribute a PR/Issue or buy me a covfefe.

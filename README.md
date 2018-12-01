@@ -37,7 +37,7 @@ Yes, myMetricsJS has prebuilt in authentication ready to go for you.
 - Rename `./lib/configexample.json` to `./lib/config.json`
 - fill er out.
 ```json
-{{
+{
     "setup": {
         "notifyAddress": "ip/subdomain.domain.com/domain.com",
         "notifyPort": "443 or 80",

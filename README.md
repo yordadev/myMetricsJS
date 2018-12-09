@@ -7,31 +7,28 @@ myMetricsJS builds a payload every 30 seconds and sends it out to your API to be
 Completely free and <b>open source</b>.<br>
 
 
-### Why use this monitor?
-`Zero Dependency` light weight monitoring system that'll send your system information to any API you want, easy peasy with an extremely easy setup.
+### Requirements
+- Latest Version of Node
+- Ubuntu
+- External endpoint to send system information too
 
 
-### Is this secure?
-Yes, myMetricsJS has prebuilt in authentication ready to go for you.
+### Installing
+```sh
+git clone https://github.com/yordadev/myMetricsJS.git
+cd client
+node setup
+```
 
-<b>If you have JWT Authenication on your API already: </b>
-- Set `security.type` to `jwt`
-- Set `security.service.jwt.token` to a JWT token.
-
-<b>If you do not have JWT Authenication on your API:</b>
-- set `security.type` to `custom`
-- set `security.service.custom.token` to `anything you want`
-- on your API Endpoint, you will retrieve the token entered above to verify that this is coming from indeed your server.
+### Usage 
+Usage of this package lives in `./client/` and its easy peasy.
+```node start && node stop```
 
 
 ### Screenshots
 <p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518523752833875968/mymetricsscreenshot1.png'/></p>
 
 <p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518191129972179020/mymetricsjs101.png'/></p>
-
-
-### Requirements
-- Latest Version of Node
 
 
 ### Configuration
@@ -76,42 +73,19 @@ Yes, myMetricsJS has prebuilt in authentication ready to go for you.
 }
 ```
 
-### What are services in the config.json?
-Services here are what keeps your monitor running deteached in the background. Plan on adding cronjobs to this but for now this will do.
-
-
-### Debug notice
-You cannot start the monitor in the background in debug mode.<br>
-To use debug mode enabled type the following with debug enabled. This does not run the monitor in the backround.
-```node mymetricsjs```
-
-
-### Installing
-```sh
-git clone https://github.com/yordadev/myMetricsJS.git
-cd client
-node setup
+### Expected Payload on Server Side
 ```
-
-### Usage 
-Usage of this package lives in `./client/` and its easy peasy.
-```node start && node stop```
-
-
-### Expected Payload
-```
-{
+const basePayload = {
     "authorization": {
-        'token': "" 
+        'token': "" /* for custom authorization on server side */
     },
-    "id": "",
-    "cpus": 0,
+    "id": "",    /* Hostname */
+    "cpus": 0, /* Comes in a List of Each Core and the Data */
     "server_uptime": 0,
     "total_memory": 0,
     "free_memory": 0,
-    "free_memory_round": 0,
-    "load_avg": [],
-    /* Comes in a List of 3 Elements, 1 Min, 15 Min, 30 Min */
+    "free_memory_round": 0,  /* The Free_Memory rounded to the nearest Ten */
+    "load_avg": [],  /* Comes in a List of 3 Elements, 1 Min, 15 Min, 30 Min */
     "interfaces": {
         "ipv4": [],
         "ipv6": []
@@ -120,6 +94,32 @@ Usage of this package lives in `./client/` and its easy peasy.
 }
 ```
 
+### Debug notice
+You cannot start the monitor in the background in debug mode.<br>
+To use debug mode enabled type the following with debug enabled. This does not run the monitor in the backround.
+```node mymetricsjs```
+
+
+# FAQ 
+
+### Why use this monitor?
+`Zero Dependency` light weight monitoring system that'll send your system information to any API you want, easy peasy with an extremely easy setup.
+
+
+### Is this secure?
+Yes, myMetricsJS has prebuilt in authentication ready to go for you.
+
+<b>If you have JWT Authenication on your API already: </b>
+- Set `security.type` to `jwt`
+- Set `security.service.jwt.token` to a JWT token.
+
+<b>If you do not have JWT Authenication on your API:</b>
+- set `security.type` to `custom`
+- set `security.service.custom.token` to `anything you want`
+- on your API Endpoint, you will retrieve the token entered above to verify that this is coming from indeed your server.
+
+### What are services in the config.json?
+Services here are what keeps your monitor running deteached in the background. Plan on adding cronjobs to this but for now this will do.
 
 ### How to contribute
 Contribute a PR/Issue or buy me a covfefe.

@@ -25,12 +25,6 @@ Usage of this package lives in `./client/` and its easy peasy.
 ```node start && node stop```
 
 
-### Screenshots
-<p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518523752833875968/mymetricsscreenshot1.png'/></p>
-
-<p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518191129972179020/mymetricsjs101.png'/></p>
-
-
 ### Configuration
 - Rename `./lib/configexample.json` to `./lib/config.json`
 - fill er out.
@@ -100,7 +94,14 @@ To use debug mode enabled type the following with debug enabled. This does not r
 ```node mymetricsjs```
 
 
+### Screenshots
+<p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518523752833875968/mymetricsscreenshot1.png'/></p>
+
+<p align="center"><img src='https://cdn.discordapp.com/attachments/425148050697093131/518191129972179020/mymetricsjs101.png'/></p>
+
+
 # FAQ 
+
 
 ### Why use this monitor?
 `Zero Dependency` light weight monitoring system that'll send your system information to any API you want, easy peasy with an extremely easy setup.

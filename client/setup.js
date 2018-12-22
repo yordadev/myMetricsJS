@@ -22,7 +22,8 @@ console.log(" Installing service " + config.services.enabled);
 console.logBgBlue('  myMetricsJS Setup < ');
 console.logFgYellow(' ⚠ ');
 
-let d = null;
+let d = null,
+    f = null;
 switch(config.services.enabled) {
     case 'screen': {
         async function setup() {
@@ -42,19 +43,21 @@ switch(config.services.enabled) {
         setup();
     }; break;
 
-    default: return console.log('myMetricsJS: Fix your config.json');
+    default: failed = console.log('myMetricsJS: Fix your config.json');
 }
 
-if (d.length > 64) {
-    d = d.substring(0, 64);
-    d += "...";
+if(failed === null) {
+    if (d.length > 64) {
+        d = d.substring(0, 64);
+        d += "...";
+    }
+    console.log('', d);
+
+    console.logBgBlue('  myMetricsJS Setup < ');
+    console.logFgYellow(' ⚠ ');
+    console.log(" Installation Complete!");
+
+    console.logBgBlue('  myMetricsJS Setup < ');
+    console.logFgYellow(' ⚠ ');
+    console.log(" Type > \"Node start\" to start monitoring. Closing this window now. Bye.");
 }
-console.log('', d);
-
-console.logBgBlue('  myMetricsJS Setup < ');
-console.logFgYellow(' ⚠ ');
-console.log(" Installation Complete!");
-
-console.logBgBlue('  myMetricsJS Setup < ');
-console.logFgYellow(' ⚠ ');
-console.log(" Type > \"Node start\" to start monitoring. Closing this window now. Bye.");

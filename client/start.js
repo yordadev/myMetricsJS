@@ -10,6 +10,7 @@ switch(int) {
     case 2: console.log(common.kekmessage); break;
 }
 
+let failed = null;
 switch(config.debug.enabled) {
     case true:
         console.logBgBlue('  myMetricsJS < ');
@@ -58,18 +59,20 @@ switch(config.debug.enabled) {
                 runPm2(); verifyRunning();
             }; break;
 
-            default: return console.log('myMetricsJS: Fix your config.json');
+            default: failed = console.log('myMetricsJS: Fix your config.json');
         }
 
-        if (d.length > 64) {
-            d = d.substring(0, 64);
-            d += "...";
-        }
-        console.log('', d);
+        if(failed === null) {
+            if (d.length > 64) {
+                d = d.substring(0, 64);
+                d += "...";
+            }
+            console.log('', d);
 
-        console.logBgBlue('  myMetricsJS < ');
-        console.logFgYellow(' ⚠ ');
-        console.log(' Your monitor is running in background and this window is now closing.');
+            console.logBgBlue('  myMetricsJS < ');
+            console.logFgYellow(' ⚠ ');
+            console.log(' Your monitor is running in background and this window is now closing.');
+        }
     }; break;
 
     default: break;

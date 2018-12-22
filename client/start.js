@@ -34,7 +34,7 @@ switch(config.debug.enabled) {
         let d = null
         switch(config.services.enabled) {
             case 'screen': {
-                async function runScreen() {
+                async function run() {
                     await exec(config.services.available.screen.run);
                 }
 
@@ -43,11 +43,11 @@ switch(config.debug.enabled) {
                     d = stdout.toString().replace(/(\r\n\t|\n|\r\t)/gm, "");
                 }
 
-                runScreen(); verifyRunning();
+                run(); verifyRunning();
             }; break;
 
             case 'pm2': {
-                async function runPm2() {
+                async function run() {
                     await exec(config.services.available.pm2.run);
                 }
 
@@ -56,7 +56,7 @@ switch(config.debug.enabled) {
                     d = stdout.toString().replace(/(\r\n\t|\n|\r\t)/gm, "");
                 }
 
-                runPm2(); verifyRunning();
+                run(); verifyRunning();
             }; break;
 
             default: failed = console.log('myMetricsJS: Fix your config.json');
